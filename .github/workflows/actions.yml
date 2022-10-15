@@ -6,7 +6,7 @@ jobs:
   job-run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Step List down the Files and the Path
+      - name: Step List down the Files and Path before anything else
         run: |
           pwd
           ls -ltra
@@ -15,5 +15,15 @@ jobs:
         uses: actions/hello-world-javascript-action@v1.1
         with:
           who-to-greet: "Monster Reddy"
+      - name: Step List down the Files and the Path After the  Javascript Actions were executed
+        run: |
+          pwd
+          ls -ltra
+      - name: Step Checkout my Repo files to remote virtual machine
+        uses: actions/checkout@v1
+      - name: Step List down the Files and the Path After the checkout the files to the remote Repo
+        run: |
+          pwd
+          ls -ltra
       - name: Step Log Greeting time
         run: echo "Hello" + "${{ steps.greet.outputs.time }}"
