@@ -1,14 +1,14 @@
-name: Gangi Shell Commands
+name: Workflow Gangi Shell Commands
 
 on: [push]
 
 jobs:
-  run-shell-command:
+  job-run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
+      - name: Step echo a string
         run: echo "Hello World"
-      - name: multiline script
+      - name: Step multiline script
         run:  |
           node -v
           npm -v
