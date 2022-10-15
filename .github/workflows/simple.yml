@@ -1,0 +1,14 @@
+name: Gangi Shell Commands
+
+on: [push]
+
+jobs:
+  run-shall-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: multiline script
+        run:  |
+          node -v
+          npm -v
