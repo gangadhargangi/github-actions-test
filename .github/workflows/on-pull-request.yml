@@ -1,0 +1,19 @@
+name: Workflow On Pull request
+
+on:
+  pull_request:
+    types:
+      - opened
+      
+jobs:
+  job-run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step List down the Files and Path before anything else
+        run: |
+          pwd
+          ls -ltra
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo ${{ github.token }}
