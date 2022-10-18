@@ -1,4 +1,4 @@
-name: Workflow Test Gangi Shell Commands
+name: Workflow on push
 
 on: [push]
 
